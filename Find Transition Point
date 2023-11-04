@@ -1,0 +1,27 @@
+class Solution
+{
+public:    
+    int transitionPoint(int arr[], int n) {
+        int low = 0;
+        int high = n - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (arr[mid] == 1) {
+      
+                if (mid > 0 && arr[mid - 1] == 0) {
+                    return mid;
+                } else {
+                    //  searching in the left half
+                    high = mid - 1;
+                }
+            } else {
+                searching in the right half
+                low = mid + 1;
+            }
+        }
+
+        return -1; // If no 1 is found, return -1
+    }
+};
