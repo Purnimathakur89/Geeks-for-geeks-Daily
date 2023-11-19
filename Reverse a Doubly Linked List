@@ -1,0 +1,14 @@
+class Solution{
+    public:
+    Node* reverseDLL(Node * head){
+        Node* p=head, *prev=NULL;
+        while(p){
+            Node* next=p->next;
+            p->next=prev;
+            prev=p;
+            p->prev=next;
+            p=next;
+        }
+        return prev;
+    }
+};
