@@ -1,0 +1,9 @@
+class Solution
+{
+    public:
+    //Function to find length of shortest common supersequence of two strings.
+    int shortestCommonSupersequence(string X, string Y, int m, int n)
+    {
+        //code here
+    }
+};
