@@ -1,0 +1,30 @@
+
+class Solution
+{
+    public:
+    Node* insertionSort(struct Node* head_ref)
+    {
+        //code here
+        vector<int> ans;
+        struct Node* curr = head_ref;
+        
+        while(curr!=NULL){
+            ans.push_back(curr->data) ;
+            curr =  curr->next ;
+        }
+        
+        sort(ans.begin(), ans.end()) ;
+        
+        curr = head_ref;
+        
+        int i = 0 ;
+        while(curr!=NULL){
+            curr->data = ans[i++] ;
+            curr=curr->next ;
+        }
+        return head_ref;
+    }
+    
+};
+
+
