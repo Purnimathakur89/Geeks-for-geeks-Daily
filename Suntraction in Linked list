@@ -1,0 +1,27 @@
+
+
+class Solution:
+    def subLinkedList(self, l1, l2):
+        num1 = self.number(l1)
+        num2 = self.number(l2)
+        
+        t = str(abs(num1 - num2))
+        ans = None
+        temp = None
+        for i in t:
+            u = Node(int(i))
+            if not ans:
+                ans = u
+                temp = ans
+            else:
+                temp.next = u
+                temp = temp.next
+        return ans
+    
+    def number(self, node):
+        cur = node
+        num = ''
+        while cur:
+            num += str(cur.data)
+            cur = cur.next
+        return int(num)
